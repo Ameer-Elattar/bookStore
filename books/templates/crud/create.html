@@ -1,0 +1,33 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block content %}
+<h2>Add new Product </h2>
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label class="form-label">title</label>
+    <input type="text" name="title" class="form-control" >
+  </div>
+  <div class="mb-3">
+    <label class="form-label">author</label>
+    <input type="text" name='author' class="form-control" >
+  </div>
+  
+  <div class="mb-3">
+    <label class="form-label">Price</label>
+    <input type="number" name='price' class="form-control" >
+  </div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">no_of_page</label>
+    <input type="number" name='no_of_page' class="form-control" >
+  </div>
+    <div class="mb-3">
+    <label class="form-label">Image</label>
+    <input type="file" name='image' class="form-control" >
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{%endblock %}

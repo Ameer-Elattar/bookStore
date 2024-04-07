@@ -1,0 +1,19 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% block content %}
+<h2>login</h2>
+
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form}}
+  <input type="submit" class="btn btn-success">
+</form>
+
+
+<script src="{% static 'BookStore/books/js/styles.js'%}">
+
+
+</script>
+
+
+{% endblock  %}

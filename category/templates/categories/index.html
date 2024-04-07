@@ -1,0 +1,31 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block title %} books Home {% endblock %}
+
+{% block content %}
+    <h1> Categories </h1>
+    <a class="btn btn-primary" href="{% url 'createCategory'%}">create Category</a>
+    
+
+<table class="table">
+        <tr>
+            <td> ID</td> <td> name </td> <td> edit </td> <td> delete </td> 
+        
+        </tr>
+        {% for cat in categories %}
+            <tr>
+                <td>{{cat.id }}</td>
+                <td> {{cat.name}}</td>
+                <td> <a class="btn btn-primary" href="edit/{{cat.id}}">edit</a> </td>
+                <td> <a class="btn btn-danger" href="delete/{{cat.id}}">delete</a> </td>
+                
+            </tr> 
+
+
+            
+        {% endfor %}
+
+
+        </table>
+    
+{% endblock %}

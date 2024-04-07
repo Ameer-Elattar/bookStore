@@ -1,0 +1,13 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block content %}
+<h2>edit Product </h2>
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form}}
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<script src="{% static 'js/styles.js'%}"></script> 
+
+
+{%endblock %}

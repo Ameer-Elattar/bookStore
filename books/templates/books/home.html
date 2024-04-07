@@ -1,0 +1,33 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block title %} books Home {% endblock %}
+
+{% block content %}
+    <h1> books </h1>
+<table class="table">
+        <tr>
+            <td> ID</td> <td> title </td> <td> no_of_page</td> <td> price</td>
+            <td> image</td>
+            <td> Show</td>
+        </tr>
+        {% for book in books %}
+            <tr>
+                <td>{{book.id }}</td>
+                <td> {{book.title}}</td>
+                <td>{{book.no_of_page}}</td>
+                <td>{{book.price}}</td>
+                <td> <img width="200" height="200 "
+                    src = "{% static '/images/'%}{{book.image}}"
+                > </td>
+                
+                <td >
+                    <a class="btn btn-info" href="{% url 'bookDetails' book.id%}"> Show</a>
+                </td> 
+
+            </tr>
+
+        {% endfor %}
+
+        </table>
+    
+{% endblock %}

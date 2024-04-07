@@ -1,0 +1,40 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+  {% block body %}
+<h2 class="text-dark">update Book {{book.title}} </h2>
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+      <input type="hidden" name="id" value="{{book.id}}" class="form-control" >
+
+  <div class="mb-3">
+    <label class="form-label">Title</label>
+    <input type="text" name="title" value="{{book.title}}" class="form-control" >
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Author</label>
+    <input type="text" name="author" value="{{book.author}}" class="form-control" >
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Price</label>
+    <input type="number" name='price' value="{{book.price}}" class="form-control" >
+  </div>
+    
+    <div class="mb-3">
+    <label class="form-label">Number Of Pages</label>
+    <input type="number" name='numberofpages' value="{{book.no_of_page}}" class="form-control" >
+  </div>
+    <div class="mb-3">
+    <label class="form-label">Image</label>
+    <input type="file" name='image' class="form-control" >
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+
+
+  {% endblock %}
+
+
